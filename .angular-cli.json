@@ -22,6 +22,10 @@
         "styles.css"
       ],
       "scripts": [],
+      "styles": [
+        "styles.css",
+        "../node_modules/font-awesome/css/font-awesome.css"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
