@@ -48,7 +48,7 @@ export class BenefitsComponent implements OnInit {
       'Coordinated transportation with your guide, who already know the area.',
       'Don&#39;t risk a bad meal, a local can show you the best five star restaurants as well as the best local favorites!',
       'Experience the city&#39;s nightlife safely and with someone who knows the "spots."',
-      'Your guide can provide you with the proper sim card for calls in the country.',
+      'Your guide can provide you with the proper SIM card for calls in the country.',
       'Some guides will even invite you into their home, where you can sleep and experience so much more than in a hotel.',
       'Sometimes local guides will have so much more information about the history of the area than could be glean from books.',
       'Ensure that the logistics of travel from and to the airport and handled.',
