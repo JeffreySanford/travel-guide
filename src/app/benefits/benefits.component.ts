@@ -42,8 +42,8 @@ export class BenefitsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    var benefitsElement = document.getElementById('benefits');
-    let quotes = [
+    const benefitsElement = document.getElementById('benefits');
+    const quotes = [
       'A local guide can show you the local tourist attractions as well as their favorite places.',
       'Coordinated transportation with your guide, who already know the area.',
       'Don&#39;t risk a bad meal, a local can show you the best five star restaurants as well as the best local favorites!',
