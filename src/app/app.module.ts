@@ -1,5 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -8,21 +10,25 @@ import { HeaderComponent } from './page/header/header.component';
 import { FooterComponent } from './page/footer/footer.component';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { BenefitsComponent } from './benefits/benefits.component';
-import { UserComponent } from './user/user.component';
+
+import { RegisterComponent } from './register/register.component';
+import { LandingComponent } from './landing/landing.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BenefitsComponent,
-    UserComponent
+    RegisterComponent,
+    LandingComponent
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
 <div style="margin-top: .5em; width: 95%;">
-  <div style="position: absolute;top: 1em;left: 1em;text-align: center;">
+  <div  [routerLink]="['/landing']" [@slideInLeft] class="header-objects" style="left: 2em;">
     <fa name="plane" size="2x"></fa>
     <p>My<br>Favorite<br>Places</p>
   </div>
-  <div style="position: absolute;top: 1em;right: 1em;text-align: center;">
+  <div [routerLink]="['/register']" class="header-objects" style="right: 2em !important;">
     <fa name="id-badge" size="2x"></fa>
-    <p>this<br>person</p>
+    <p>{{ name }}</p>
   </div>
 </div>
