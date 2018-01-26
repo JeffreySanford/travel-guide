@@ -1,0 +1,43 @@
+.benefits {
+  height: 3em;
+  font-size: 2em;
+  color: blue;
+  text-align: center;
+  width: 80%;
+  margin: 5em auto 3em;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+  }
+
+  50% {
+    color: red;
+  }
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.user-route {
+  position: relative;
+  margin-top: 65%;
+}
+
+@media screen and (min-width: 600px) {
+  .user-route {
+    position: relative;
+    margin-top: 30%;
+  }
+}
