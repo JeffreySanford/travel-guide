@@ -1,0 +1,70 @@
+<div class="container-fluid" style="margin-top: 12em;">
+  <form #form="ngForm" (ngSubmit)="logForm(form)">
+      <div class="row">
+
+          <div class="form-group col-md-4">
+            <label for="first-name">First Name:</label>
+            <input type="text" class="form-control" id="first-name">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="middle-name">Middle Name:</label>
+            <input type="text" class="form-control" id="middle-name">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="last-name">Last Name:</label>
+            <input type="text" class="form-control" id="last-name">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address-one">Address</label>
+              <input type="text" class="form-control" id="address-one">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address-two">Address (additonal)</label>
+              <input type="text" class="form-control" id="address-two">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-group col-md-4">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="state">State:</label>
+            <input type="text" class="form-control" id="state">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="zip-code">Zip Code:</label>
+            <input type="text" class="form-control" id="zip-code">
+          </div>
+
+        </div>
+
+        <div class="row" style="margin: 0 auto;text-align: center;margin-top: 3em;">
+          <div class="col-md-6">
+              <input class="btn btn-primary" type="reset" value="Reset">
+          </div>
+          <div class="col-md-6">
+            <input class="btn btn-primary" type="submit" value="Submit">
+          </div>
+
+        </div>
+    </form>
+  </div>
+

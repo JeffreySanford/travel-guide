@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @Component({
   selector: 'app-register',
@@ -6,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
+  logForm(value: any) {
+    console.log(value);
+  }
 
   constructor() { }
 
