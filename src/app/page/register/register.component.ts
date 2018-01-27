@@ -11,6 +11,7 @@ export class RegisterComponent implements OnInit {
 
   logForm(value: any) {
     console.log(value);
+    debugger;
   }
 
   constructor() { }

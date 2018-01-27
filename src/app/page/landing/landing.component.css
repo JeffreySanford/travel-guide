@@ -1,10 +1,10 @@
 .benefits {
   height: 3em;
-  font-size: 2em;
+  font-size: 1.5em;
   color: blue;
   text-align: center;
   width: 80%;
-  margin: 5em auto 3em;
+  margin: 6em auto 3em;
 }
 
 .fade-in {
@@ -29,15 +29,17 @@
 	}
 }
 
-
 .user-route {
   position: relative;
   margin-top: 65%;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .user-route {
     position: relative;
     margin-top: 30%;
+  }
+  .benefits p {
+    font-size: 1.5em;
   }
 }
