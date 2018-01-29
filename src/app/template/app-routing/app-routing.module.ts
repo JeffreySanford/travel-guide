@@ -8,7 +8,7 @@ import { RegisterComponent } from '../../page/register/register.component';
 import { SuccessfulSubmissionComponent } from '../../page/register/successful-submission/successful-submission.component';
 
 
-const routes: Routes = [
+const ROUTES: Routes = [
     { path: 'landing', component: LandingComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'register/successful-submission', component: SuccessfulSubmissionComponent},
@@ -18,7 +18,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(ROUTES, {useHash: true})
     ],
     exports: [
         RouterModule
