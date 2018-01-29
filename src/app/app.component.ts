@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({

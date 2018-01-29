@@ -15,7 +15,7 @@ import { RegisterComponent } from './page/register/register.component';
 import { LandingComponent } from './page/landing/landing.component';
 
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
-import { RegisterCompleteDirective } from './page/register/register-complete.directive';
+import { SuccessfulSubmissionComponent } from './page/register/successful-submission/successful-submission.component';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { RegisterCompleteDirective } from './page/register/register-complete.dir
     FooterComponent,
     RegisterComponent,
     LandingComponent,
-    RegisterCompleteDirective
+    SuccessfulSubmissionComponent
   ],
   imports: [
     NgbModule.forRoot(),
