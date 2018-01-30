@@ -1,0 +1,21 @@
+.container {
+  margin-top: 9em;
+}
+
+#where-to {
+  height: 3em;
+  font-size: 1.5em;
+  color: blue;
+  text-align: center;
+  width: 80%;
+  margin: 6em auto 3em;
+}
+
+.form-check-input {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.form-check-label {
+  margin-right: 1em;
+}
