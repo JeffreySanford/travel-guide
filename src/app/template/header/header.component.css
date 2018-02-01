@@ -1,5 +1,6 @@
 .header-objects {
-  position: absolute;
-  top: -8em;
+  position: fixed;
+  top: 1em;
+  z-index: 5;
   text-align: center;
 }

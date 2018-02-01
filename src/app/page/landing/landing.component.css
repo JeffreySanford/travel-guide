@@ -1,10 +1,10 @@
 .benefits {
+  padding-top: 5em;
   height: 3em;
-  font-size: 1.5em;
+  font-size: 1.25em;
   color: blue;
   text-align: center;
-  width: 80%;
-  margin: 6em auto 3em;
+  width: 100%;
 }
 
 .fade-in {
