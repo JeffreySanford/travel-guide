@@ -74,13 +74,11 @@ export class AgmComponent implements OnInit {
   }
 
 
-  private markerClick() {
+  public markerClick() {
     let position = {
     "latitude": this.latitude,
     "longitude": this.longitude
     }
-    debugger
-
   }
   private setCurrentPosition() {
     if ("geolocation" in navigator) {
