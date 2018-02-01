@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, NgZone,  ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
@@ -14,6 +15,19 @@ export class AgmComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
+  public marker: any;
+  public guides: Object
+  public name: String
+
+
+  // Build the marker set
+  public markers: [ //represents list of markers being shown on the map
+        {
+            // lat: this.longitude,  //use this object as a template for the rest of your markers
+            // lng: this.latitude,
+            // icon: default-icon.png
+        }
+      ]
 
   @ViewChild("search")
   public searchElementRef: ElementRef;
@@ -59,6 +73,15 @@ export class AgmComponent implements OnInit {
     });
   }
 
+
+  private markerClick() {
+    let position = {
+    "latitude": this.latitude,
+    "longitude": this.longitude
+    }
+    debugger
+
+  }
   private setCurrentPosition() {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {

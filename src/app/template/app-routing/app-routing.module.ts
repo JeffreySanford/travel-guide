@@ -9,6 +9,8 @@ import { RegisterComponent } from '../../page/landing/register/register.componen
 import { SuccessfulSubmissionComponent } from '../../page/landing/register/successful-submission/successful-submission.component';
 
 import { GuestComponent } from '../../page/guest/guest.component';
+import { SelectedGuideComponent } from '../../page/guest/selected-guide/selected-guide.component';
+
 import { HostComponent } from '../../page/host/host.component';
 
 const ROUTES: Routes = [
@@ -18,6 +20,8 @@ const ROUTES: Routes = [
     { path: 'register/successful-submission', component: SuccessfulSubmissionComponent},
     { path: 'register/successful-submission/:name', component: SuccessfulSubmissionComponent},
     { path: 'guest', component: GuestComponent},
+    { path: 'guest/selected-guide', component: SelectedGuideComponent},
+    { path: 'guest/selected-guide/:guide', component: SelectedGuideComponent},
     { path: 'host', component: HostComponent},
     { path: '**', redirectTo: 'landing', pathMatch: 'full' }
 ];

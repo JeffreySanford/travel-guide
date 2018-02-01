@@ -8,7 +8,7 @@
   color: blue;
   text-align: center;
   width: 80%;
-  margin: 6em auto 3em;
+  margin: -5em 30% 6em;
 }
 
 .form-check-input {
@@ -18,4 +18,8 @@
 
 .form-check-label {
   margin-right: 1em;
+}
+
+.medium {
+  font-size: 1.5em !important;
 }

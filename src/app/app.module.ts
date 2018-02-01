@@ -25,6 +25,7 @@ import { GuestComponent } from './page/guest/guest.component';
 
 import { HostComponent } from './page/host/host.component';
 import { AgmComponent } from './page/guest/agm/agm.component';
+import { SelectedGuideComponent } from './page/guest/selected-guide/selected-guide.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AgmComponent } from './page/guest/agm/agm.component';
     GuestComponent,
     HostComponent,
     LoginComponent,
-    AgmComponent
+    AgmComponent,
+    SelectedGuideComponent
   ],
   imports: [
     NgbModule.forRoot(),

@@ -23,12 +23,35 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
     ])
   ]
 })
+
 export class GuestComponent implements OnInit {
+
+  public guides: any;
 
   constructor() { }
 
   ngOnInit() {
-    const whereToElement = document.getElementById('where-to');
-    whereToElement.innerHTML = 'Where would you like to visit?'
+     this.guides = [
+      {
+        latitude: 39.82825,
+        longitude: -98.5795,
+        name: "Linda the Guide"
+      },
+      {
+        latitude: 39.82826,
+        longitude: -98.5795,
+        name: "Fred the Guide"
+      },
+      {
+        latitude: 39.82826,
+        longitude: -98.5795,
+        name: "Jason the Guide"
+      },
+      {
+        latitude: 39.82826,
+        longitude: -98.5795,
+        name: "Sophia the Guide"
+      }
+    ];
   }
 }
