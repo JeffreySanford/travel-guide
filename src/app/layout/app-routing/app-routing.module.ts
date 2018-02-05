@@ -20,8 +20,7 @@ const ROUTES: Routes = [
     { path: 'register/successful-submission', component: SuccessfulSubmissionComponent},
     { path: 'register/successful-submission/:name', component: SuccessfulSubmissionComponent},
     { path: 'guest', component: GuestComponent},
-    { path: 'guest/selected-guide', component: SelectedGuideComponent},
-    { path: 'guest/selected-guide/:guide', component: SelectedGuideComponent},
+    { path: 'guest/:id', component: SelectedGuideComponent},
     { path: 'host', component: HostComponent},
     { path: '**', redirectTo: 'landing', pathMatch: 'full' }
 ];

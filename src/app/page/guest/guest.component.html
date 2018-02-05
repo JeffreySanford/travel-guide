@@ -1,15 +1,34 @@
-<div class="container" style="padding-top: 5em;" [@slideInLeft]>
+<div class="container" style="padding-top: 3em;" [@slideInLeft]>
   <div class="row">
     <div id="where-to" class="col-md-6" style="float: left;left: -1em;">
-      <p style="margin-top: 5em;font-size: 1em;color: purple;">Here's people that want to show you their city</p>
-      <ul class="row" style="list-style: none;margin-top: 0;">
-          <li class="col-md-4" *ngFor="let guide of guides; let i = index;">
-            <div class="btn-circle">
-              <i class="fa fa-user" style="font-size: 1.5em;margin: .1em 38% 0;text-align: center;"></i>
-              <p style="width: 50%;margin: 0 auto;">{{ guide.name }}</p>
-            </div>
-          </li>
-        </ul>
+      <div>
+        <div class="row">
+          <ul style="list-style: none;margin-top: 1em;">
+            <p style="margin-top: 1em;font-size: 1em;color: purple;">Here's people looking to travel</p>
+            <li class="col-md-4" style="float: left;margin: 0;" *ngFor="let guest of guests; let i = index;">
+              <a routerLink="/guest/{{guest.id}}">
+                <div class="btn-circle">
+                  <i class="fa fa-user" style=""></i>
+                  <p style="">{{ guest.name }}</p>
+                  <p style="font-size: 1em;margin-top: -1.5em;color: black;">{{ guest.id }}</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul style="list-style: none;margin-top: 0;">
+            <p style="margin-top: 1em;font-size: 1em;color: purple;">Here's people that want to show you their city</p>
+            <li class="col-md-4" style="float: left;margin: 0;" *ngFor="let guide of guides; let i = index;">
+              <div class="btn-circle">
+                <i class="fa fa-user" style=""></i>
+                <p style="">{{ guide.name }}</p>
+                <p style="font-size: 1em;margin-top: -2em;color: black;">{{ guide.id }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="col-md-4" style="">
       <p id="where-to">Where would you like to visit?</p>
@@ -18,19 +37,20 @@
 
 
     <div class="col-md-2">
-        <div class="col-md-3" style="width: 15em;">
-            <div style="margin-top: 0;margin-left: 0em;">
-              <div id="checkboxes">
-                <input type="checkbox" name="rGroup" value="1" id="r1" checked="checked" />
-                <label class="whatever" for="r1">tourist attractions</label>
-                <input type="checkbox" name="rGroup" value="2" id="r2" />
-                <label class="whatever" for="r2">fantastic local food</label>
-                <input type="checkbox" name="rGroup" value="3" id="r3" />
-                <label class="whatever" for="r3">amazing local places</label>
-                <input type="checkbox" name="rGroup" value="4" id="r4" />
-                <label class="whatever" for="r4">motorcycle tours</label>
-              </div>
+      <div class="col-md-3">
+        <div style="margin-top: 0;margin-left: 0em;">
+          <div id="checkboxes">
+            <input type="checkbox" name="rGroup" value="1" id="r1" checked="checked" />
+            <label class="whatever" for="r1">tourist attractions</label>
+            <input type="checkbox" name="rGroup" value="2" id="r2" />
+            <label class="whatever" for="r2">fantastic local food</label>
+            <input type="checkbox" name="rGroup" value="3" id="r3" />
+            <label class="whatever" for="r3">amazing local places</label>
+            <input type="checkbox" name="rGroup" value="4" id="r4" />
+            <label class="whatever" for="r4">motorcycle tours</label>
           </div>
+        </div>
+      </div>
+      <app-messages></app-messages>
     </div>
   </div>
-</div>

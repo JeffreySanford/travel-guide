@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
+import { GUEST } from '../../guest';
+import { GuestService } from '../../services/guests.service';
+
+import { GUIDE } from '../../guide';
+import { GuideService } from '../../services/guides.service';
+
+import { MessageService } from '../../services/message.service';
 @Component({
   selector: 'app-guest',
   templateUrl: './guest.component.html',
@@ -26,32 +36,29 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 
 export class GuestComponent implements OnInit {
 
-  public guides: any;
+  public guests: GUEST[];
+  public guides: GUIDE[];
 
-  constructor() { }
+  getGuests(): void {
+    this.guestService.log('Guest Service Fired.')
+    this.guestService.getGuests()
+      .subscribe(guests => this.guests = guests);
+  }
+
+  getGuides(): void {
+    this.guideService.log('Guide Service Fired.')
+    this.guideService.getGuides()
+      .subscribe(guides => this.guides = guides);
+  }
+
+  constructor(
+    public guestService: GuestService,
+    public guideService: GuideService
+  ) { }
 
   ngOnInit() {
-     this.guides = [
-      {
-        latitude: 39.82825,
-        longitude: -98.5795,
-        name: "Linda the Guide"
-      },
-      {
-        latitude: 39.82826,
-        longitude: -98.5795,
-        name: "Fred the Guide"
-      },
-      {
-        latitude: 39.82826,
-        longitude: -98.5795,
-        name: "Jason the Guide"
-      },
-      {
-        latitude: 39.82826,
-        longitude: -98.5795,
-        name: "Sophia the Guide"
-      }
-    ];
+
+    this.getGuests();
+    this.getGuides();
   }
 }

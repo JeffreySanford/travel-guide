@@ -1,0 +1,13 @@
+<div *ngIf="messageService.messages.length">
+  <mat-card style="width: 14em; margin-top: 2em;">
+    <h3 style='font-size: 1em;float:left;'>Messages</h3>
+    <a mat-fab style='font-size: .6em;float: right;margin-bottom: 1em;;' class="clear"
+      (click)="messageService.clear()">clear
+    </a>
+    <div class='message-container' style="clear: both;border: 1px solid lime; line-height: 1em;">
+      <div *ngFor='let message of messageService.messages' class='message'>
+        <p style="margin: 0;"> {{ message }} </p>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -2,9 +2,10 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from './template/app-routing/app-routing.module';
+import { AppRoutingModule } from './layout/app-routing/app-routing.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule } from '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
@@ -13,8 +14,8 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './template/header/header.component';
-import { FooterComponent } from './template/footer/footer.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 import { LandingComponent } from './page/landing/landing.component';
 import { RegisterComponent } from './page/landing/register/register.component';
@@ -26,6 +27,17 @@ import { GuestComponent } from './page/guest/guest.component';
 import { HostComponent } from './page/host/host.component';
 import { AgmComponent } from './page/guest/agm/agm.component';
 import { SelectedGuideComponent } from './page/guest/selected-guide/selected-guide.component';
+
+import { GuestService } from './services/guests.service';
+import { VendorsService } from './services/vendors.service';
+import { GuideService } from './services/guides.service';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './services/message.service';
+
+import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
+/** Mock httpd service */
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +51,8 @@ import { SelectedGuideComponent } from './page/guest/selected-guide/selected-gui
     HostComponent,
     LoginComponent,
     AgmComponent,
-    SelectedGuideComponent
+    SelectedGuideComponent,
+    MessagesComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -51,12 +64,17 @@ import { SelectedGuideComponent } from './page/guest/selected-guide/selected-gui
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   exports:[
-    BrowserAnimationsModule
+    MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule
   ],
-  providers: [],
+  providers: [ HttpClientModule, GuestService, GuideService, VendorsService, MessageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
