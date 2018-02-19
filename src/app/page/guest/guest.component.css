@@ -2,6 +2,12 @@
   margin-top: 3em;
 }
 
+.content-descriptor {
+  margin-top: 1em;
+  font-size: 1em;
+  color: purple;
+}
+
 #where-to {
   color: purple;
   font-size: 1.5em;
@@ -26,36 +32,50 @@
   font-size: 1em;
 }
 
-#checkboxes input[type=checkbox]{
+.checkboxes input[type=checkbox]{
   display: none;
 }
 
-#checkboxes input[type=checkbox]:checked + .whatever{
+.checkboxes .selected {
   border: 1.5px solid green;
   background-color: white;
   border-radius: 10px;
   color: green;
 }
 
+/* #checkboxes input[type=checkbox]:checked + .whatever{
+  border: 1.5px solid green;
+  background-color: white;
+  border-radius: 10px;
+  color: green;
+} */
+
 .btn-circle {
   border: 1px solid red;
   border-radius: 50%;
-  width: 3em !important;
-  height: 3em !important;
-  color: red;
+  width: 3.5em !important;
+  height: 3.5em !important;
   margin-bottom: .5em;
 }
+
 .btn-circle p {
-  font-size: .5em;
+  color: darkred;
+  font-size: .6em;
   text-align: center;
-  width: 75%;
-  margin: 0 auto ;
+  margin: -1.5em auto 0;
   line-height: 1em;
 }
 
 .btn-circle i {
-  font-size: 1em;
-  margin: 0 38%;
+  font-size: 2.75em;
+  margin: 0 21%;
   text-align: center;
+  color: rgba(255,0,0, .2);
+}
+
+.btn-circle .id-for-icon {
+  font-size: 1em;
+  margin-top: -2.25em;
+  color: black;
 }
 

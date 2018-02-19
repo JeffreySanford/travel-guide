@@ -18,7 +18,7 @@ export class GuestService {
     private messageService: MessageService
   ) { }
 
-  /** Log a HeroService message with the MessageService */
+  /** Log a GuestService message with the MessageService */
   public log(message: string) {
     this.messageService.add(message);
   }

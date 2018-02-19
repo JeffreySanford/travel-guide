@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
-
+import { hostElement } from '@angular/core/src/render3/instructions';
 
 const person: Object = {};
-let name: String;
+let userName: String;
 
 function getUser() {
-  name = 'Bob Bobenstein';
-  return name;
+  userName = 'Bob Bobenstein';
+  return userName;
 }
 @Component({
   selector: 'app-header',
@@ -36,7 +36,22 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  name = getUser();
+  userName = getUser();
 
-  ngOnInit() {}
+  public links = [
+    '/landing',
+    '/guest',
+    '/host',
+    '/vendor'
+  ];
+
+  public userLinks = [
+    '/login',
+    '/register',
+    '/account',
+    '/settings'
+  ]
+  ngOnInit() {
+    const links = this.links
+  }
 }

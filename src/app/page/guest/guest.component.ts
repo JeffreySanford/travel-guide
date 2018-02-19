@@ -39,6 +39,12 @@ export class GuestComponent implements OnInit {
   public guests: GUEST[];
   public guides: GUIDE[];
 
+  log = '';
+
+  logCheckbox(element: HTMLInputElement): void {
+    this.log = `Checkbox ${element.value} was ${element.checked ? '' : 'un'}checked\n`;
+  }
+
   getGuests(): void {
     this.guestService.log('Guest Service Fired.')
     this.guestService.getGuests()
@@ -57,8 +63,15 @@ export class GuestComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.getGuests();
     this.getGuides();
+
+    let attractions = {
+      tourism: true,
+      food: true,
+      accomodations: true,
+      dynamic: false
+    }
+
   }
 }

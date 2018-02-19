@@ -1,10 +1,33 @@
 <div class="container">
-  <div  [routerLink]="['/landing']" class="header-objects" style="left: 2em;">
-    <fa name="plane" size="2x"></fa>
-    <p>My<br>Favorite<br>Places</p>
+  <div class="header-objects" style="left: 2em;" [matMenuTriggerFor]="menu">
+    <span>My Favorite Places</span>
+    <button mat-icon-button >
+      <fa name="plane" size="2x"></fa>
+    </button>
+    
+    <mat-menu #menu="matMenu">
+      <a *ngFor="let link of links">
+        <button mat-menu-item [routerLink]="[link]">
+          <fa name="plane" size="2x"></fa>
+          {{ link }}
+        </button>
+      </a>
+    </mat-menu>
   </div>
-  <div [routerLink]="['/register']" class="header-objects" style="right: 2em !important;">
-    <fa name="id-badge" size="2x"></fa>
-    <p>{{ name }}</p>
+  <div  class="header-objects" style="right: 5em !important;" [matMenuTriggerFor]="userMenu">
+    <span>{{ userName }}</span>
+    <button mat-icon-button>
+      <fa name="id-badge" size="2x"></fa>
+    </button>
+    
+    <mat-menu #userMenu="matMenu">
+      <a *ngFor="let userLink of userLinks">
+        <button mat-menu-item [routerLink]="[userLink]">
+          <fa name="plane" size="2x"></fa>
+          {{ userLink }}
+        </button>
+      </a>
+      </mat-menu>
   </div>
 </div>
+

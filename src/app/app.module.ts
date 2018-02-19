@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './layout/app-routing/app-routing.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule } from '@angular/material';
+import { MatGridListModule, MatListModule, MatDialogModule, MatInputModule, MatDialogRef, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule } from '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
@@ -18,9 +18,9 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
 import { LandingComponent } from './page/landing/landing.component';
-import { RegisterComponent } from './page/landing/register/register.component';
-import { LoginComponent } from './page/landing/login/login.component';
-import { SuccessfulSubmissionComponent } from './page/landing/register/successful-submission/successful-submission.component';
+import { LoginComponent } from './page/user/login/login.component';
+import { RegisterComponent } from './page/user/register/register.component';
+import { SuccessfulSubmissionComponent } from './page/user/register/successful-submission/successful-submission.component';
 
 import { GuestComponent } from './page/guest/guest.component';
 
@@ -44,14 +44,14 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    RegisterComponent,
     LandingComponent,
-    SuccessfulSubmissionComponent,
     GuestComponent,
     HostComponent,
     LoginComponent,
-    AgmComponent,
+    RegisterComponent,
+    SuccessfulSubmissionComponent,
     SelectedGuideComponent,
+    AgmComponent,
     MessagesComponent
   ],
   imports: [
@@ -65,14 +65,14 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule,
+    MatGridListModule, MatListModule, MatDialogModule, MatInputModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
   exports:[
-    MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule
+    MatDialogModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule
   ],
   providers: [ HttpClientModule, GuestService, GuideService, VendorsService, MessageService ],
   bootstrap: [AppComponent]

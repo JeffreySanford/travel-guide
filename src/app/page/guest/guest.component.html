@@ -4,27 +4,28 @@
       <div>
         <div class="row">
           <ul style="list-style: none;margin-top: 1em;">
-            <p style="margin-top: 1em;font-size: 1em;color: purple;">Here's people looking to travel</p>
+            <p class="content-descriptor">Here's people looking to travel with similar interests.</p>
             <li class="col-md-4" style="float: left;margin: 0;" *ngFor="let guest of guests; let i = index;">
               <a routerLink="/guest/{{guest.id}}">
                 <div class="btn-circle">
-                  <i class="fa fa-user" style=""></i>
-                  <p style="">{{ guest.name }}</p>
-                  <p style="font-size: 1em;margin-top: -1.5em;color: black;">{{ guest.id }}</p>
-                </div>
+                  <i class="fa fa-user"></i>
+                  <p>{{ guest.name }}</p>
+                  <p class="id-for-icon">{{ guest.id }}</p>                </div>
               </a>
             </li>
           </ul>
         </div>
         <div class="row">
           <ul style="list-style: none;margin-top: 0;">
-            <p style="margin-top: 1em;font-size: 1em;color: purple;">Here's people that want to show you their city</p>
+            <p class="content-descriptor">Here's people that want to show you their city.</p>
             <li class="col-md-4" style="float: left;margin: 0;" *ngFor="let guide of guides; let i = index;">
-              <div class="btn-circle">
-                <i class="fa fa-user" style=""></i>
-                <p style="">{{ guide.name }}</p>
-                <p style="font-size: 1em;margin-top: -2em;color: black;">{{ guide.id }}</p>
-              </div>
+              <a routerLink="/guide/{{guide.id}}">
+                <div class="btn-circle">
+                  <i class="fa fa-user"></i>
+                  <p>{{ guide.name }}</p>
+                  <p class="id-for-icon">{{ guide.id }}</p>
+                </div>
+              </a>
             </li>
           </ul>
         </div>
@@ -35,20 +36,28 @@
       <app-agm>loading</app-agm>
     </div>
 
-
     <div class="col-md-2">
       <div class="col-md-3">
         <div style="margin-top: 0;margin-left: 0em;">
-          <div id="checkboxes">
-            <input type="checkbox" name="rGroup" value="1" id="r1" checked="checked" />
-            <label class="whatever" for="r1">tourist attractions</label>
-            <input type="checkbox" name="rGroup" value="2" id="r2" />
-            <label class="whatever" for="r2">fantastic local food</label>
-            <input type="checkbox" name="rGroup" value="3" id="r3" />
-            <label class="whatever" for="r3">amazing local places</label>
-            <input type="checkbox" name="rGroup" value="4" id="r4" />
-            <label class="whatever" for="r4">motorcycle tours</label>
+          <div class="checkboxes">
+            <label class="whatever" [class.selected]="tourism.checked" >
+              <input #tourism type="checkbox" value="tourism" (change)="logCheckbox(tourism)"><span class="fa fa-bus">&nbsp;Tourism</span> 
+            </label>
+
+            <label class="whatever" [class.selected]="food.checked">
+              <input #food type="checkbox" value="food" (change)="logCheckbox(food)"><span class="fa fa-cutlery">&nbsp;food</span>
+            </label>
+
+            <label class="whatever" [class.selected]="accomodations.checked">
+              <input #accomodations type="checkbox" value="accomodations" (change)="logCheckbox(accomodations)"><span class="fa fa-bed">&nbsp;Accomodations</span>
+            </label>
+
+            <label class="whatever" [class.selected]="dynamic.checked">
+              <input #dynamic type="checkbox" value="dynamic" (change)="logCheckbox(dynamic)"><span class="fa fa-gift">&nbsp;Dynamic</span>
+            </label>
+
           </div>
+          <div>{{ log }}</div>
         </div>
       </div>
       <app-messages></app-messages>
