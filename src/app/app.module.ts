@@ -5,9 +5,20 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './layout/app-routing/app-routing.module';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatGridListModule, MatListModule, MatDialogModule, MatInputModule, MatDialogRef, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule } from '@angular/material';
+import {
+  MatGridListModule,
+  MatListModule,
+  MatDialogModule,
+  MatInputModule,
+  MatDialogRef,
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule
+} from '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Angular Google Maps (AGM)
 // https://github.com/SebastianM/angular-google-maps
@@ -34,10 +45,10 @@ import { GuideService } from './services/guides.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './services/message.service';
 
-import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
+import { HttpClientModule } from '@angular/common/http'; // replaces previous Http service
 /** Mock httpd service */
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './services/in-memory-data.service';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -65,16 +76,35 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatGridListModule, MatListModule, MatDialogModule, MatInputModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule,
+    MatGridListModule,
+    MatListModule,
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false
+    })
   ],
-  exports:[
-    MatDialogModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule
+  exports: [
+    MatDialogModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule
   ],
-  providers: [ HttpClientModule, GuestService, GuideService, VendorsService, MessageService ],
+  providers: [
+    HttpClientModule,
+    GuestService,
+    GuideService,
+    VendorsService,
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -3,21 +3,22 @@
     <div id="where-to" class="col-md-6" style="float: left;left: -1em;">
       <div>
         <div class="row">
-          <ul style="list-style: none;margin-top: 1em;">
-            <p class="content-descriptor">Here's people looking to travel with similar interests.</p>
+          <ul style="list-style: none;margin-top: -2em;">
+            <p style="font-size: .7em;" class="content-descriptor">Here's people looking to travel with similar interests.</p>
             <li class="col-md-4" style="float: left;margin: 0;" *ngFor="let guest of guests; let i = index;">
               <a routerLink="/guest/{{guest.id}}">
                 <div class="btn-circle">
                   <i class="fa fa-user"></i>
                   <p>{{ guest.name }}</p>
-                  <p class="id-for-icon">{{ guest.id }}</p>                </div>
+                  <p class="id-for-icon">{{ guest.id }}</p>
+                </div>
               </a>
             </li>
           </ul>
         </div>
         <div class="row">
           <ul style="list-style: none;margin-top: 0;">
-            <p class="content-descriptor">Here's people that want to show you their city.</p>
+            <p style="font-size: .7em;" class="content-descriptor">Here's people that want to show you their city.</p>
             <li class="col-md-4" style="float: left;margin: 0;" *ngFor="let guide of guides; let i = index;">
               <a routerLink="/guide/{{guide.id}}">
                 <div class="btn-circle">
@@ -31,8 +32,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4" style="">
-      <p id="where-to">Where would you like to visit?</p>
+    <div class="col-md-4">
+      <p id="where-to" style="font-size: 1.1em;">Where would you like to visit?</p>
       <app-agm>loading</app-agm>
     </div>
 
@@ -40,20 +41,24 @@
       <div class="col-md-3">
         <div style="margin-top: 0;margin-left: 0em;">
           <div class="checkboxes">
-            <label class="whatever" [class.selected]="tourism.checked" >
-              <input #tourism type="checkbox" value="tourism" (change)="logCheckbox(tourism)"><span class="fa fa-bus">&nbsp;Tourism</span> 
+            <label class="whatever" [class.selected]="tourism.checked">
+              <input #tourism type="checkbox" value="tourism" (change)="logCheckbox(tourism)">
+              <span class="fa fa-bus">&nbsp;Tourism</span>
             </label>
 
             <label class="whatever" [class.selected]="food.checked">
-              <input #food type="checkbox" value="food" (change)="logCheckbox(food)"><span class="fa fa-cutlery">&nbsp;food</span>
+              <input #food type="checkbox" value="food" (change)="logCheckbox(food)">
+              <span class="fa fa-cutlery">&nbsp;food</span>
             </label>
 
             <label class="whatever" [class.selected]="accomodations.checked">
-              <input #accomodations type="checkbox" value="accomodations" (change)="logCheckbox(accomodations)"><span class="fa fa-bed">&nbsp;Accomodations</span>
+              <input #accomodations type="checkbox" value="accomodations" (change)="logCheckbox(accomodations)">
+              <span class="fa fa-bed">&nbsp;Accomodations</span>
             </label>
 
             <label class="whatever" [class.selected]="dynamic.checked">
-              <input #dynamic type="checkbox" value="dynamic" (change)="logCheckbox(dynamic)"><span class="fa fa-gift">&nbsp;Dynamic</span>
+              <input #dynamic type="checkbox" value="dynamic" (change)="logCheckbox(dynamic)">
+              <span class="fa fa-gift">&nbsp;Dynamic</span>
             </label>
 
           </div>

@@ -1,10 +1,15 @@
-import { Component, OnInit, ElementRef, NgZone,  ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  NgZone,
+  ViewChild
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
-import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 
-
+@ViewChild('search')
 @Component({
   selector: 'app-agm',
   templateUrl: './agm.component.html',
@@ -16,55 +21,45 @@ export class AgmComponent implements OnInit {
   public searchControl: FormControl;
   public zoom: number;
   public marker: any;
-  public guides: Object
-  public name: String
+  public guides: Object;
+  public name: String;
 
-
-  // Build the marker set
-  public markers: [ //represents list of markers being shown on the map
-        {
-            // lat: this.longitude,  //use this object as a template for the rest of your markers
-            // lng: this.latitude,
-            // icon: default-icon.png
-        }
-      ]
-
-  @ViewChild("search")
+  @ViewChild('search')
   public searchElementRef: ElementRef;
 
-  constructor(
-    private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
-  ) {}
+  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
 
   ngOnInit() {
-    //set google maps defaults
+    // set google maps defaults
     this.zoom = 4;
     this.latitude = 39.8282;
     this.longitude = -98.5795;
 
-    //create search FormControl
+    // create search FormControl
     this.searchControl = new FormControl();
 
-    //set current position
+    // set current position
     this.setCurrentPosition();
 
-    //load Places Autocomplete
+    // load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
-      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ["address"]
-      });
-      autocomplete.addListener("place_changed", () => {
+      const autocomplete = new google.maps.places.Autocomplete(
+        this.searchElementRef.nativeElement,
+        {
+          types: ['address']
+        }
+      );
+      autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
-          //get the place result
-          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+          // get the place result
+          const place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
-          //verify result
+          // verify result
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
 
-          //set latitude, longitude and zoom
+          // set latitude, longitude and zoom
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
           this.zoom = 12;
@@ -73,16 +68,15 @@ export class AgmComponent implements OnInit {
     });
   }
 
-
   public markerClick() {
-    let position = {
-    "latitude": this.latitude,
-    "longitude": this.longitude
-    }
+    const position = {
+      latitude: this.latitude,
+      longitude: this.longitude
+    };
   }
   private setCurrentPosition() {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(position => {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         this.zoom = 12;

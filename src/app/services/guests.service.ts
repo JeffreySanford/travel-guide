@@ -23,7 +23,7 @@ export class GuestService {
     this.messageService.add(message);
   }
 
-  /** GET heroes from the server */
+  /** GET guests from the server */
   getGuests(): Observable<GUEST[]> {
     return this.http.get<GUEST[]>(this.guestsUrl)
   }

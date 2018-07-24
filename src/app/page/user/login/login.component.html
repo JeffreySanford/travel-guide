@@ -1,16 +1,16 @@
 <form style="font-size: 2em;margin-top: 5em;" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
   <mat-grid-list cols="2" rowHeight="3:1">
       <mat-grid-tile >
-        <mat-input-container style="width: 75%;">
+        <mat-form-field style="width: 75%;">
           <input matInput [(ngModel)]="email" formControlName="email" placeholder="e-mail address" class="form-control"  type="text" required>
-        </mat-input-container>
+        </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile >
-        <mat-input-container style="width: 75%;">
+        <mat-form-field style="width: 75%;">
           <input matInput [(ngModel)]="password" formControlName="password" class="form-control" placeholder="password" type="password" required>
-        </mat-input-container>        
+        </mat-form-field>
       </mat-grid-tile>
-    </mat-grid-list>  
+    </mat-grid-list>
   <button style="font-size: .9em; background-color: rgba(173, 216, 230, .3);text-align: center; margin-left: 48%;" mat-button class="submit-btn" type="submit">Login!</button>
 </form>
 

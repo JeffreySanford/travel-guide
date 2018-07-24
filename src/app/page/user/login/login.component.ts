@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import {} from '@types/googlemaps';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(loginForm) {
-    console.log('User has logged in: '+  this.email)
+    console.log('User has logged in: ' +  this.email);
   }
 
   constructor() {
@@ -27,8 +28,8 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    let email = this.loginForm.email
-    let password = this.loginForm.password
+    const email = this.loginForm.email;
+    const password = this.loginForm.password;
   }
 
 }
