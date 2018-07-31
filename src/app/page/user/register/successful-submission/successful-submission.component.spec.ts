@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SucessfulSubmissionComponent } from './sucessful-submission.component';
+import { SuccessfulSubmissionComponent } from './successful-submission.component';
 
-describe('SucessfulSubmissionComponent', () => {
-  let component: SucessfulSubmissionComponent;
-  let fixture: ComponentFixture<SucessfulSubmissionComponent>;
+describe('SuccessfulSubmissionComponent', () => {
+  let component: SuccessfulSubmissionComponent;
+  let fixture: ComponentFixture<SuccessfulSubmissionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SucessfulSubmissionComponent ]
-    })
-    .compileComponents();
+      declarations: [SuccessfulSubmissionComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SucessfulSubmissionComponent);
+    fixture = TestBed.createComponent(SuccessfulSubmissionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
