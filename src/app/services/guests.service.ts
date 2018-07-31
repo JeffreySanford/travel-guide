@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 
 import { GUEST } from '../guest';
 import { MessageService } from './message.service';
@@ -25,6 +24,6 @@ export class GuestService {
 
   /** GET guests from the server */
   getGuests(): Observable<GUEST[]> {
-    return this.http.get<GUEST[]>(this.guestsUrl)
+    return this.http.get<GUEST[]>(this.guestsUrl);
   }
 }

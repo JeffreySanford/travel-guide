@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
@@ -46,13 +45,13 @@ export class GuestComponent implements OnInit {
   }
 
   getGuests(): void {
-    this.guestService.log('Guest Service Fired.')
+    this.guestService.log('Guest Service Fired.');
     this.guestService.getGuests()
       .subscribe(guests => this.guests = guests);
   }
 
   getGuides(): void {
-    this.guideService.log('Guide Service Fired.')
+    this.guideService.log('Guide Service Fired.');
     this.guideService.getGuides()
       .subscribe(guides => this.guides = guides);
   }
@@ -66,12 +65,12 @@ export class GuestComponent implements OnInit {
     this.getGuests();
     this.getGuides();
 
-    let attractions = {
+    const attractions = {
       tourism: true,
       food: true,
       accomodations: true,
       dynamic: false
-    }
+    };
 
   }
 }

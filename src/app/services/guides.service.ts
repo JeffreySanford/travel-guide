@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
 
 import { GUIDE } from '../guide';
 import { MessageService } from './message.service';
@@ -25,6 +24,6 @@ export class GuideService {
 
   /** GET heroes from the server */
   getGuides(): Observable<GUIDE[]> {
-    return this.http.get<GUIDE[]>(this.guidesUrl)
+    return this.http.get<GUIDE[]>(this.guidesUrl);
   }
 }
